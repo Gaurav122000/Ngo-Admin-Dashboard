@@ -13,6 +13,11 @@ function initRoutes(app) {
         res.json(volunteer);
     })
 
+    app.get('/contact', async (req,res) => {
+        const contact = await ContactModel.find({});
+        res.json(contact)
+    })
+
     app.post('/gallery-post',(req,res)=>{
         const galleryData = req.body;
         console.log(galleryData)
